@@ -24,4 +24,8 @@ class WdgUtil {
   }
 
   static buildTxtButton(BuildContext context, String nmIcon, dynamic fuction) {}
+
+  static buildRow(Widget child) {
+    return Row(children: [Expanded(child: child)]);
+  }
 }
