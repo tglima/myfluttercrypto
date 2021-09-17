@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
+import 'package:flutter/gestures.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen();
@@ -11,101 +12,96 @@ class AboutScreen extends StatelessWidget {
       print('Opened site');
     }
 
-    Row _rowNameApp = Row(children: [
-      Padding(
-          padding: ConstantUtil.edgeInsetsTopZero,
-          child: RichText(
-              textScaleFactor: 1.5,
-              textAlign: TextAlign.left,
-              text: TextSpan(children: <TextSpan>[
-                TextSpan(
-                    text: ConstantUtil.nmApplication,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: ConstantUtil.colorThemeApp))
-              ])))
-    ]);
+    Row _rowNameApp = WdgUtil.buildRow(Padding(
+        padding: ConstantUtil.edgeInsetsTopZero,
+        child: RichText(
+            textScaleFactor: 1.5,
+            textAlign: TextAlign.left,
+            text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: ConstantUtil.nmApplication,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      fontWeight: FontWeight.bold,
+                      color: ConstantUtil.colorThemeApp))
+            ]))));
 
-    Row _rowLicense = Row(children: [
-      Padding(
-          padding: ConstantUtil.edgeInsetsDefault,
-          child: RichText(
-              textAlign: TextAlign.left,
-              text: TextSpan(children: <TextSpan>[
-                TextSpan(
-                    text: ConstantUtil.license,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: ConstantUtil.colorTxtDefault)),
-                TextSpan(
-                    text: ConstantUtil.txtLicense,
-                    style: TextStyle(color: ConstantUtil.colorTxtDefault))
-              ])))
-    ]);
+    Row _rowLicense = WdgUtil.buildRow(Padding(
+        padding: ConstantUtil.edgeInsetsDefault,
+        child: RichText(
+            textAlign: TextAlign.left,
+            text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: ConstantUtil.license,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      fontWeight: FontWeight.bold,
+                      color: ConstantUtil.colorTxtDefault)),
+              TextSpan(
+                  text: ConstantUtil.txtLicense,
+                  style: ConstantUtil.textStyleDefault)
+            ]))));
 
-    Row _rowVersion = Row(children: [
-      Padding(
-          padding: ConstantUtil.edgeInsetsDefault,
-          child: RichText(
-              textAlign: TextAlign.left,
-              text: TextSpan(children: <TextSpan>[
-                TextSpan(
-                    text: ConstantUtil.version,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: ConstantUtil.colorTxtDefault)),
-                TextSpan(
-                    text: ConstantUtil.nuVersion,
-                    style: TextStyle(color: ConstantUtil.colorTxtDefault))
-              ])))
-    ]);
+    Row _rowVersion = WdgUtil.buildRow(Padding(
+        padding: ConstantUtil.edgeInsetsDefault,
+        child: RichText(
+            textAlign: TextAlign.left,
+            text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: ConstantUtil.version,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      fontWeight: FontWeight.bold,
+                      color: ConstantUtil.colorTxtDefault)),
+              TextSpan(
+                  text: ConstantUtil.nuVersion,
+                  style: ConstantUtil.textStyleDefault)
+            ]))));
 
-    Row _rowCopyright = Row(children: [
-      Padding(
-          padding: ConstantUtil.edgeInsetsDefault,
-          child: RichText(
-              textAlign: TextAlign.left,
-              text: TextSpan(children: <TextSpan>[
-                TextSpan(
-                    text: ConstantUtil.copyright,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: ConstantUtil.colorTxtDefault)),
-                TextSpan(
-                    text: ConstantUtil.txtCopyright,
-                    style: TextStyle(color: ConstantUtil.colorTxtDefault))
-              ])))
-    ]);
+    Row _rowCopyright = WdgUtil.buildRow(Padding(
+        padding: ConstantUtil.edgeInsetsDefault,
+        child: RichText(
+            textAlign: TextAlign.left,
+            text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: ConstantUtil.copyright,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      fontWeight: FontWeight.bold,
+                      color: ConstantUtil.colorTxtDefault)),
+              TextSpan(
+                  text: ConstantUtil.txtCopyright,
+                  style: ConstantUtil.textStyleDefault)
+            ]))));
 
-    GestureDetector _gesDetRowLinkGitHub = GestureDetector(
-        onTap: _openSite,
-        child: Row(children: [
-          Padding(
-              padding: ConstantUtil.edgeInsetsDefault,
-              child: RichText(
-                  textAlign: TextAlign.left,
-                  text: TextSpan(children: <TextSpan>[
-                    TextSpan(
-                        text: ConstantUtil.visit,
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: ConstantUtil.colorTxtDefault)),
-                    TextSpan(
-                        text: ConstantUtil.twoPoints + ' ',
-                        style: TextStyle(color: ConstantUtil.colorTxtDefault)),
-                    TextSpan(
-                        text: ConstantUtil.linkGitHub,
-                        style: TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: ConstantUtil.colorTxtUrl))
-                  ])))
-        ]));
+    Row _rowLinkGitHub = WdgUtil.buildRow(Padding(
+        padding: ConstantUtil.edgeInsetsDefault,
+        child: RichText(
+            textAlign: TextAlign.left,
+            text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: ConstantUtil.visit,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      fontWeight: FontWeight.bold,
+                      color: ConstantUtil.colorTxtDefault)),
+              TextSpan(
+                  text: ConstantUtil.twoPoints + ' ',
+                  style: ConstantUtil.textStyleDefault),
+              TextSpan(
+                  text: ConstantUtil.linkGitHub,
+                  recognizer: TapGestureRecognizer()..onTap = _openSite,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      decoration: TextDecoration.underline,
+                      color: ConstantUtil.colorTxtUrl))
+            ]))));
 
     List<Widget> _wdgsAboutScreen = <Widget>[
       _rowNameApp,
       _rowVersion,
       _rowCopyright,
-      _gesDetRowLinkGitHub,
+      _rowLinkGitHub,
       _rowLicense
     ];
 
