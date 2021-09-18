@@ -97,15 +97,13 @@ class AboutScreen extends StatelessWidget {
                       color: ConstantUtil.colorTxtUrl))
             ]))));
 
-    List<Widget> _wdgsAboutScreen = <Widget>[
+    return WdgUtil.buildScaffold(
+        context, WdgUtil.buildAppBar(context, ConstantUtil.about), <Widget>[
       _rowNameApp,
       _rowVersion,
       _rowCopyright,
       _rowLinkGitHub,
       _rowLicense
-    ];
-
-    return WdgUtil.buildScaffold(context,
-        WdgUtil.buildAppBar(context, ConstantUtil.about), _wdgsAboutScreen);
+    ]);
   }
 }
