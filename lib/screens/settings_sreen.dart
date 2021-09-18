@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfluttercrypto/data/global_data.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
+import 'package:myfluttercrypto/utils/enum_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -17,17 +18,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
     });
 
     _saveSettings() {
-      if (_controllerTxtInput.text.trim().length == 0) {
-        print(ConstantUtil.errTxtIsEmpty);
+      if (_controllerTxtInput.text.trim().length <
+          ConstantUtil.minLengthKeyWord) {
+        WdgUtil.buildDialog(
+            context, TypeDialog.error, ConstantUtil.errTxtInvalid);
         return;
       }
 
-      if (_controllerTxtInput.text.trim().length < 35) {
-        print(ConstantUtil.errTxtInvalid);
-        return;
-      }
+      WdgUtil.buildDialog(
+          context, TypeDialog.success, ConstantUtil.sucKeyWordSaved);
 
-      print(_controllerTxtInput.text + ' ' + ConstantUtil.sucKeyWordSaved);
+      setState(() {
+        GlobalData.keyWord = _controllerTxtInput.text;
+      });
     }
 
     Row _rowTxtInfo = WdgUtil.buildRow(RichText(
@@ -44,19 +47,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
               style: TextStyle(
                   height: ConstantUtil.lineHeightDefault,
                   fontWeight: FontWeight.bold,
-                  color: ConstantUtil.colorTxtRed))
+                  color: ConstantUtil.colorRed))
         ])));
 
     Flexible _flexInputText = Flexible(
         child: Container(
-            constraints: BoxConstraints(maxWidth: 550),
-            padding: EdgeInsets.only(top: 20),
+            constraints: BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
+            padding: EdgeInsets.only(top: ConstantUtil.defaultPadTop),
             child: TextField(
               controller: _controllerTxtInput,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(border: OutlineInputBorder()),
               textAlign: TextAlign.center,
-              maxLength: 50,
+              maxLength: ConstantUtil.maxLengthKeyWord,
               maxLines: 1,
               toolbarOptions: ToolbarOptions(copy: false, selectAll: false),
             )));
@@ -67,15 +70,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
           WdgUtil.buildTxtButton(context, ConstantUtil.save, _saveSettings)
         ]));
 
-    List<Widget> _wdgsSettingsScreen = <Widget>[
-      _rowTxtInfo,
-      _flexInputText,
-      _rowTxtBtnSave
-    ];
-
     return WdgUtil.buildScaffold(
         context,
         WdgUtil.buildAppBar(context, ConstantUtil.settings),
-        _wdgsSettingsScreen);
+        <Widget>[_rowTxtInfo, _flexInputText, _rowTxtBtnSave]);
   }
 }
