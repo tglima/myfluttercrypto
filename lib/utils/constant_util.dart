@@ -15,7 +15,7 @@ class ConstantUtil {
   static final String txtLicense =
       ': O código fonte desta aplicação está sob Licença MIT, todo o restante deve ser considerado conteúdo registrado dos seus respectivos proprietários e desenvolvedores.';
   static final String txtInfoKeyWord =
-      'Abaixo está a palavra chave utilizada para criptografar e descriptograr os textos, ela deve conter no mínimo 35 carateres e no máximo 50. ';
+      'Abaixo está a palavra chave utilizada para criptografar e descriptograr os textos, ela deve conter no mínimo ${minLengthKeyWord.toString()} carateres e no máximo ${maxLengthKeyWord.toString()}. ';
   static final String txtKeyWordReset =
       'Sempre que o aplicativo é fechado a palavra chave retorna para o seu valor padrão. ';
   static final String txtKeyWordWarning =
@@ -24,13 +24,19 @@ class ConstantUtil {
   static final String errTxtIsEmpty = 'O texto informado está vazio!';
   static final String errTxtInvalid = 'O texto informado é inválido!';
   static final String sucKeyWordSaved = 'Nova palavra passe salva com sucesso!';
+  static final String alert = 'Alerta';
+  static final String error = 'Erro';
+  static final String success = "Sucesso";
+  static final String close = "Fechar";
 
   //Colors
-  static final colorThemeApp = Colors.indigo[500];
-  static final colorTxtUrl = Colors.indigo;
-  static final colorTxtRed = Colors.redAccent[700];
+  static final Color colorThemeApp = Colors.indigo.shade500;
+  static final Color colorTxtUrl = Colors.indigo;
+  static final Color colorRed = Colors.redAccent.shade700;
   static final Color colorTxtDefault = Colors.black87;
-  static final colorWhite = Colors.white;
+  static final Color colorWhite = Colors.white;
+  static final Color colorAlert = Colors.yellow.shade600;
+  static final Color colorSuccess = Colors.green.shade800;
 
   //EdgeInsetsGeometry
   static final EdgeInsetsGeometry edgeInsetsDefault =
@@ -47,7 +53,11 @@ class ConstantUtil {
   static final TextStyle textStyleDefault = TextStyle(
       height: ConstantUtil.lineHeightDefault,
       color: ConstantUtil.colorTxtDefault);
-
+  static final double defaultPadTop = 20;
+  static final double maxWidthBox = 475;
+  static final double maxHeightBox = 350;
+  static final int maxLengthKeyWord = 50;
+  static final int minLengthKeyWord = 35;
   //Temp
   static final String nuVersion = ': 0.0.0+1';
 }
