@@ -20,12 +20,17 @@ class ConstantUtil {
       'Sempre que o aplicativo é fechado a palavra chave retorna para o seu valor padrão. ';
   static final String txtKeyWordWarning =
       'Sem a palavra chave correta não será possível descriptografar o texto!';
+  static final String save = 'Salvar';
+  static final String errTxtIsEmpty = 'O texto informado está vazio!';
+  static final String errTxtInvalid = 'O texto informado é inválido!';
+  static final String sucKeyWordSaved = 'Nova palavra passe salva com sucesso!';
 
   //Colors
   static final colorThemeApp = Colors.indigo[500];
   static final colorTxtUrl = Colors.indigo;
   static final colorTxtRed = Colors.redAccent[700];
   static final Color colorTxtDefault = Colors.black87;
+  static final colorWhite = Colors.white;
 
   //EdgeInsetsGeometry
   static final EdgeInsetsGeometry edgeInsetsDefault =
@@ -33,6 +38,9 @@ class ConstantUtil {
 
   static final EdgeInsetsGeometry edgeInsetsTopZero =
       EdgeInsets.fromLTRB(16, 0, 16, 8);
+
+  static final EdgeInsetsGeometry padTxtBtnDefault =
+      EdgeInsets.fromLTRB(40, 16, 40, 16);
 
   //Others
   static final double lineHeightDefault = 1.5;
