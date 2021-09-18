@@ -14,8 +14,8 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     void goToSettings() {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const SettingsScreen()));
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => SettingsScreen()));
     }
 
     void goToAbout() {
