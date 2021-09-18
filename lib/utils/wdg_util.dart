@@ -23,7 +23,19 @@ class WdgUtil {
                 children: listWdg)));
   }
 
-  static buildTxtButton(BuildContext context, String nmIcon, dynamic fuction) {}
+  static buildTxtButton(BuildContext context, String nmIcon, dynamic function) {
+    return TextButton(
+      onPressed: function,
+      child: Text(
+        nmIcon,
+        style: TextStyle(color: ConstantUtil.colorWhite),
+      ),
+      style: TextButton.styleFrom(
+        backgroundColor: ConstantUtil.colorThemeApp,
+        padding: ConstantUtil.padTxtBtnDefault,
+      ),
+    );
+  }
 
   static buildRow(Widget child) {
     return Row(children: [Expanded(child: child)]);
