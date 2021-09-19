@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
+import 'package:myfluttercrypto/utils/enum_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
 import 'package:flutter/gestures.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen();
 
   @override
   Widget build(BuildContext context) {
-    _openSite() {
-      print('Opened site');
+    _openSite() async {
+      if (await canLaunch(ConstantUtil.linkGitHub)) {
+        await launch(ConstantUtil.linkGitHub);
+        return;
+      }
+
+      WdgUtil.buildDialog(context, TypeDialog.error,
+          ConstantUtil.errOpenSite + ConstantUtil.linkGitHub);
     }
 
     Row _rowNameApp = WdgUtil.buildRow(Padding(
