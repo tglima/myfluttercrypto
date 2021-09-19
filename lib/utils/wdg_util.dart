@@ -163,4 +163,9 @@ class WdgUtil {
           );
         });
   }
+
+  static void goToScreen(
+      {@required BuildContext context, @required dynamic screen}) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+  }
 }
