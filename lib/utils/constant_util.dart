@@ -11,7 +11,7 @@ class ConstantUtil {
   static final String linkGitHub = 'https://github.com/tglima/myfluttercrypto';
   static final String version = 'Versão';
   static final String license = 'Licença';
-  static final String twoPoints = ':';
+  static final String twoPoints = ': ';
   static final String txtLicense =
       ': O código fonte desta aplicação está sob Licença MIT, todo o restante deve ser considerado conteúdo registrado dos seus respectivos proprietários e desenvolvedores.';
   static final String txtInfoKeyWord =
@@ -71,6 +71,4 @@ class ConstantUtil {
   static final double maxHeightBox = 350;
   static final int maxLengthKeyWord = 50;
   static final int minLengthKeyWord = 35;
-  //Temp
-  static final String nuVersion = ': 0.0.0+1';
 }
