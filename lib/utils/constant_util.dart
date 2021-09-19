@@ -28,6 +28,8 @@ class ConstantUtil {
   static final String errDecryptTxt =
       'Ocorreu um erro e não foi possível descriptografar o texto informado!';
   static final String sucKeyWordSaved = 'Nova palavra passe salva com sucesso!';
+  static final String errOpenSite =
+      'Ocorreu um erro e não foi possível abri o site: ';
   static final String alert = 'Alerta';
   static final String error = 'Erro';
   static final String success = "Sucesso";
