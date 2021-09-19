@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfluttercrypto/data/global_data.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
@@ -62,7 +63,7 @@ class AboutScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
-                  text: ConstantUtil.nuVersion,
+                  text: ConstantUtil.twoPoints + GlobalData.nuVersion,
                   style: ConstantUtil.textStyleDefault)
             ]))));
 
@@ -94,7 +95,7 @@ class AboutScreen extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
-                  text: ConstantUtil.twoPoints + ' ',
+                  text: ConstantUtil.twoPoints,
                   style: ConstantUtil.textStyleDefault),
               TextSpan(
                   text: ConstantUtil.linkGitHub,
