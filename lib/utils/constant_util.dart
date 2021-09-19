@@ -23,11 +23,22 @@ class ConstantUtil {
   static final String save = 'Salvar';
   static final String errTxtIsEmpty = 'O texto informado está vazio!';
   static final String errTxtInvalid = 'O texto informado é inválido!';
+  static final String inputYourText =
+      'Informe um texto abaixo e clique no botão correspondente a sua escolha';
+  static final String errDecryptTxt =
+      'Ocorreu um erro e não foi possível descriptografar o texto informado!';
   static final String sucKeyWordSaved = 'Nova palavra passe salva com sucesso!';
   static final String alert = 'Alerta';
   static final String error = 'Erro';
   static final String success = "Sucesso";
   static final String close = "Fechar";
+  static final String txtEncrypt = 'Criptografar';
+  static final String txtDecrypt = 'Descriptografar';
+  static final String titleEncrypt = 'Texto Criptografado';
+  static final String titleDecrypt = 'Texto Descriptografado';
+  static final String txtResult = 'Resultado';
+  static final String copyTxt = 'Copiar Texto';
+  static final String txtCopiedSuccessfully = 'Texto copiado com sucesso!';
 
   //Colors
   static final Color colorThemeApp = Colors.indigo.shade500;
