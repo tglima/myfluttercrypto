@@ -17,6 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController _controllerTxtInput = TextEditingController();
+    CryptoUtil _cryptoUtil = CryptoUtil();
 
     void _goToSettings() {
       WdgUtil.goToScreen(context: context, screen: SettingsScreen());
@@ -42,16 +43,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
       WdgUtil.goToScreen(
           context: context,
-          screen: ResultScreen(
-              ConstantUtil.titleEncrypt, _controllerTxtInput.text));
+          screen: ResultScreen(ConstantUtil.titleEncrypt,
+              _cryptoUtil.txtEncrypt(_controllerTxtInput.text)));
     }
 
     void _decryptText() {
       if (!_valTxtIsEmpty()) {
         return;
       }
-      CryptoUtil crypto = CryptoUtil();
-      ResultData resultData = crypto.txtDecrypt(_controllerTxtInput.text);
+
+      ResultData resultData = _cryptoUtil.txtDecrypt(_controllerTxtInput.text);
       if (resultData.resultHasError()) {
         WdgUtil.buildDialog(
             context, TypeDialog.error, ConstantUtil.errDecryptTxt);
