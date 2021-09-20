@@ -18,8 +18,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     });
 
     _saveSettings() {
-      if (_controllerTxtInput.text.trim().length <
-          ConstantUtil.minLengthKeyWord) {
+      if (_controllerTxtInput.text.trim().length < ConstantUtil.lengthKeyWord) {
         WdgUtil.buildDialog(
             context, TypeDialog.error, ConstantUtil.errTxtInvalid);
         return;
@@ -59,7 +58,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               keyboardType: TextInputType.text,
               decoration: InputDecoration(border: OutlineInputBorder()),
               textAlign: TextAlign.center,
-              maxLength: ConstantUtil.maxLengthKeyWord,
+              maxLength: ConstantUtil.lengthKeyWord,
               maxLines: 1,
               toolbarOptions: ToolbarOptions(copy: false, selectAll: false),
             )));

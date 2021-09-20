@@ -15,7 +15,7 @@ class ConstantUtil {
   static final String txtLicense =
       ': O código fonte desta aplicação está sob Licença MIT, todo o restante deve ser considerado conteúdo registrado dos seus respectivos proprietários e desenvolvedores.';
   static final String txtInfoKeyWord =
-      'Abaixo está a palavra chave utilizada para criptografar e descriptograr os textos, ela deve conter no mínimo ${minLengthKeyWord.toString()} carateres e no máximo ${maxLengthKeyWord.toString()}. ';
+      'Abaixo está a palavra chave utilizada para criptografar e descriptograr os textos, ela deve conter ${lengthKeyWord.toString()} carateres.  Quanto mais complexa ela for melhor será! ';
   static final String txtKeyWordReset =
       'Sempre que o aplicativo é fechado a palavra chave retorna para o seu valor padrão. ';
   static final String txtKeyWordWarning =
@@ -69,6 +69,5 @@ class ConstantUtil {
   static final double defaultPadTop = 20;
   static final double maxWidthBox = 475;
   static final double maxHeightBox = 350;
-  static final int maxLengthKeyWord = 50;
-  static final int minLengthKeyWord = 35;
+  static final int lengthKeyWord = 20;
 }
