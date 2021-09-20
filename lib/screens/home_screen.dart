@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myfluttercrypto/data/result_data.dart';
 import 'package:myfluttercrypto/screens/result_screen.dart';
-import 'package:myfluttercrypto/screens/settings_sreen.dart';
+import 'package:myfluttercrypto/screens/settings_screen.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/crypto_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
