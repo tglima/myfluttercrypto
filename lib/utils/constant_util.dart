@@ -15,7 +15,7 @@ class ConstantUtil {
   static final String txtLicense =
       ': O código fonte desta aplicação está sob Licença MIT, todo o restante deve ser considerado conteúdo registrado dos seus respectivos proprietários e desenvolvedores.';
   static final String txtInfoKeyWord =
-      'Abaixo está a palavra chave utilizada para criptografar e descriptograr os textos, ela deve conter ${lengthKeyWord.toString()} carateres.  Quanto mais complexa ela for melhor será! ';
+      'Abaixo está a palavra chave utilizada para criptografar e descriptograr os textos, ela deve conter ${lengthKeyWord.toString()} carateres. Quanto mais complexa ela for, melhor será! ';
   static final String txtKeyWordReset =
       'Sempre que o aplicativo é fechado a palavra chave retorna para o seu valor padrão. ';
   static final String txtKeyWordWarning =
