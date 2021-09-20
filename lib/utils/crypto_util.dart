@@ -23,7 +23,7 @@ class CryptoUtil {
           txt: encrypter.decrypt(Encrypted.from64(txt), iv: iv));
     } catch (ex) {
       print('Exception: ${ex.toString()}');
-      result = ResultData(false);
+      result = ResultData(true);
     }
     return result;
   }
