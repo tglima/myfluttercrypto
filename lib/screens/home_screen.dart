@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:myfluttercrypto/data/result_data.dart';
 import 'package:myfluttercrypto/screens/result_screen.dart';
 import 'package:myfluttercrypto/screens/settings_screen.dart';
@@ -65,6 +66,12 @@ class _HomeScreenState extends State<HomeScreen> {
               ResultScreen(ConstantUtil.titleDecrypt, resultData.resultTxt()));
     }
 
+    void _clearInputText() {
+      setState(() {
+        _controllerTxtInput.text = '';
+      });
+    }
+
     Row _rowTxtInfoInput = WdgUtil.buildRow(RichText(
         textAlign: TextAlign.center,
         textScaleFactor: 1.2,
@@ -87,7 +94,8 @@ class _HomeScreenState extends State<HomeScreen> {
               textAlign: TextAlign.center,
               minLines: 8,
               maxLines: 16,
-              toolbarOptions: ToolbarOptions(copy: false, selectAll: false),
+              toolbarOptions:
+                  ToolbarOptions(copy: false, selectAll: false, paste: true),
             )));
 
     Row _rowTxtBtns = WdgUtil.buildRow(ButtonBar(
@@ -97,7 +105,12 @@ class _HomeScreenState extends State<HomeScreen> {
         children: <Widget>[
           WdgUtil.buildTxtButton(
               context, ConstantUtil.txtEncrypt, _encryptText),
-          WdgUtil.buildTxtButton(context, ConstantUtil.txtDecrypt, _decryptText)
+          WdgUtil.buildTxtButton(
+              context, ConstantUtil.clearTxt, _clearInputText,
+              bkgColorBtn: ConstantUtil.colorSilver),
+          WdgUtil.buildTxtButton(context, ConstantUtil.txtDecrypt, _decryptText,
+              bkgColorBtn: ConstantUtil.colorAlert,
+              txtColorBtn: ConstantUtil.colorTxtDefault)
         ]));
 
     AppBar _buildAppBar = AppBar(
