@@ -40,6 +40,7 @@ class ConstantUtil {
   static final String titleDecrypt = 'Texto Descriptografado';
   static final String txtResult = 'Resultado';
   static final String copyTxt = 'Copiar Texto';
+  static final String clearTxt = 'Limpar Texto';
   static final String txtCopiedSuccessfully = 'Texto copiado com sucesso!';
 
   //Colors
@@ -50,6 +51,7 @@ class ConstantUtil {
   static final Color colorWhite = Colors.white;
   static final Color colorAlert = Colors.yellow.shade600;
   static final Color colorSuccess = Colors.green.shade800;
+  static final Color colorSilver = Colors.grey.shade600;
 
   //EdgeInsetsGeometry
   static final EdgeInsetsGeometry edgeInsetsDefault =
