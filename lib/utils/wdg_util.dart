@@ -24,15 +24,25 @@ class WdgUtil {
                 children: listWdg)));
   }
 
-  static buildTxtButton(BuildContext context, String nmIcon, dynamic function) {
+  static buildTxtButton(BuildContext context, String nmIcon, dynamic function,
+      {Color bkgColorBtn = Colors.transparent,
+      Color txtColorBtn = Colors.transparent}) {
+    if (bkgColorBtn == Colors.transparent) {
+      bkgColorBtn = ConstantUtil.colorThemeApp;
+    }
+
+    if (txtColorBtn == Colors.transparent) {
+      txtColorBtn = ConstantUtil.colorWhite;
+    }
+
     return TextButton(
       onPressed: function,
       child: Text(
         nmIcon,
-        style: TextStyle(color: ConstantUtil.colorWhite),
+        style: TextStyle(color: txtColorBtn),
       ),
       style: TextButton.styleFrom(
-        backgroundColor: ConstantUtil.colorThemeApp,
+        backgroundColor: bkgColorBtn,
         padding: ConstantUtil.padTxtBtnDefault,
       ),
     );
