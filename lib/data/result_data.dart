@@ -3,15 +3,15 @@ class ResultData {
   bool _hasError = true;
 
   ResultData(bool hasError, {String txt = ''}) {
-    this._txt = txt;
-    this._hasError = hasError;
+    _txt = txt;
+    _hasError = hasError;
   }
 
   resultTxt() {
-    return this._txt;
+    return _txt;
   }
 
   resultHasError() {
-    return this._hasError;
+    return _hasError;
   }
 }

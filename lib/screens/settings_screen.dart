@@ -5,6 +5,8 @@ import 'package:myfluttercrypto/utils/enum_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
 
 class SettingsScreen extends StatefulWidget {
+  const SettingsScreen({Key? key}) : super(key: key);
+
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
 }
@@ -51,16 +53,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     Flexible _flexInputText = Flexible(
         child: Container(
-            constraints: BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
-            padding: EdgeInsets.only(top: ConstantUtil.defaultPadTop),
+            constraints:
+                const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
+            padding: const EdgeInsets.only(top: ConstantUtil.defaultPadTop),
             child: TextField(
               controller: _controllerTxtInput,
               keyboardType: TextInputType.text,
-              decoration: InputDecoration(border: OutlineInputBorder()),
+              decoration: const InputDecoration(border: OutlineInputBorder()),
               textAlign: TextAlign.center,
               maxLength: ConstantUtil.lengthKeyWord,
               maxLines: 1,
-              toolbarOptions: ToolbarOptions(copy: false, selectAll: false),
+              toolbarOptions:
+                  const ToolbarOptions(copy: false, selectAll: false),
             )));
 
     Row _rowTxtBtnSave = WdgUtil.buildRow(ButtonBar(

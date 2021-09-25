@@ -2,46 +2,46 @@ import 'package:flutter/material.dart';
 
 class ConstantUtil {
   //Texts
-  static final String nmApplication = 'MyFlutterCrypto';
-  static final String settings = 'Configurações';
-  static final String about = 'Sobre';
-  static final String copyright = 'Copyright';
-  static final String txtCopyright = ': Copyright © 2021 Thiago Lima de Sousa.';
-  static final String visit = 'Visite';
-  static final String linkGitHub = 'https://github.com/tglima/myfluttercrypto';
-  static final String version = 'Versão';
-  static final String license = 'Licença';
-  static final String twoPoints = ': ';
-  static final String txtLicense =
+  static const String nmApplication = 'MyFlutterCrypto';
+  static const String settings = 'Configurações';
+  static const String about = 'Sobre';
+  static const String copyright = 'Copyright';
+  static const String txtCopyright = ': Copyright © 2021 Thiago Lima de Sousa.';
+  static const String visit = 'Visite';
+  static const String linkGitHub = 'https://github.com/tglima/myfluttercrypto';
+  static const String version = 'Versão';
+  static const String license = 'Licença';
+  static const String twoPoints = ': ';
+  static const String txtLicense =
       ': O código fonte desta aplicação está sob Licença MIT, todo o restante deve ser considerado conteúdo registrado dos seus respectivos proprietários e desenvolvedores.';
   static final String txtInfoKeyWord =
       'Abaixo está a palavra chave utilizada para criptografar e descriptograr os textos, ela deve conter ${lengthKeyWord.toString()} carateres. Quanto mais complexa ela for, melhor será! ';
-  static final String txtKeyWordReset =
+  static const String txtKeyWordReset =
       'Sempre que o aplicativo é fechado a palavra chave retorna para o seu valor padrão. ';
-  static final String txtKeyWordWarning =
+  static const String txtKeyWordWarning =
       'Sem a palavra chave correta não será possível descriptografar o texto!';
-  static final String save = 'Salvar';
-  static final String errTxtIsEmpty = 'O texto informado está vazio!';
-  static final String errTxtInvalid = 'O texto informado é inválido!';
-  static final String inputYourText =
+  static const String save = 'Salvar';
+  static const String errTxtIsEmpty = 'O texto informado está vazio!';
+  static const String errTxtInvalid = 'O texto informado é inválido!';
+  static const String inputYourText =
       'Informe um texto abaixo e clique no botão correspondente a sua escolha';
-  static final String errDecryptTxt =
+  static const String errDecryptTxt =
       'Ocorreu um erro e não foi possível descriptografar o texto informado!';
-  static final String sucKeyWordSaved = 'Nova palavra passe salva com sucesso!';
-  static final String errOpenSite =
+  static const String sucKeyWordSaved = 'Nova palavra passe salva com sucesso!';
+  static const String errOpenSite =
       'Ocorreu um erro e não foi possível abri o site: ';
-  static final String alert = 'Alerta';
-  static final String error = 'Erro';
-  static final String success = "Sucesso";
-  static final String close = "Fechar";
-  static final String txtEncrypt = 'Criptografar';
-  static final String txtDecrypt = 'Descriptografar';
-  static final String titleEncrypt = 'Texto Criptografado';
-  static final String titleDecrypt = 'Texto Descriptografado';
-  static final String txtResult = 'Resultado';
-  static final String copyTxt = 'Copiar Texto';
-  static final String clearTxt = 'Limpar Texto';
-  static final String txtCopiedSuccessfully = 'Texto copiado com sucesso!';
+  static const String alert = 'Alerta';
+  static const String error = 'Erro';
+  static const String success = "Sucesso";
+  static const String close = "Fechar";
+  static const String txtEncrypt = 'Criptografar';
+  static const String txtDecrypt = 'Descriptografar';
+  static const String titleEncrypt = 'Texto Criptografado';
+  static const String titleDecrypt = 'Texto Descriptografado';
+  static const String txtResult = 'Resultado';
+  static const String copyTxt = 'Copiar Texto';
+  static const String clearTxt = 'Limpar Texto';
+  static const String txtCopiedSuccessfully = 'Texto copiado com sucesso!';
 
   //Colors
   static final Color colorThemeApp = Colors.indigo.shade500;
@@ -54,22 +54,22 @@ class ConstantUtil {
   static final Color colorSilver = Colors.grey.shade600;
 
   //EdgeInsetsGeometry
-  static final EdgeInsetsGeometry edgeInsetsDefault =
+  static const EdgeInsetsGeometry edgeInsetsDefault =
       EdgeInsets.fromLTRB(16, 8, 16, 8);
 
-  static final EdgeInsetsGeometry edgeInsetsTopZero =
+  static const EdgeInsetsGeometry edgeInsetsTopZero =
       EdgeInsets.fromLTRB(16, 0, 16, 8);
 
-  static final EdgeInsetsGeometry padTxtBtnDefault =
+  static const EdgeInsetsGeometry padTxtBtnDefault =
       EdgeInsets.fromLTRB(40, 16, 40, 16);
 
   //Others
-  static final double lineHeightDefault = 1.5;
+  static const double lineHeightDefault = 1.5;
   static final TextStyle textStyleDefault = TextStyle(
       height: ConstantUtil.lineHeightDefault,
       color: ConstantUtil.colorTxtDefault);
-  static final double defaultPadTop = 20;
-  static final double maxWidthBox = 475;
-  static final double maxHeightBox = 350;
-  static final int lengthKeyWord = 20;
+  static const double defaultPadTop = 20;
+  static const double maxWidthBox = 475;
+  static const double maxHeightBox = 350;
+  static const int lengthKeyWord = 20;
 }

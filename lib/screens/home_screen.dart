@@ -10,6 +10,7 @@ import 'package:myfluttercrypto/utils/wdg_util.dart';
 import 'about_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -21,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     CryptoUtil _cryptoUtil = CryptoUtil();
 
     void _goToSettings() {
-      WdgUtil.goToScreen(context: context, screen: SettingsScreen());
+      WdgUtil.goToScreen(context: context, screen: const SettingsScreen());
     }
 
     void _goToAbout() {
@@ -85,21 +86,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
     Flexible _flexInputTxt = Flexible(
         child: Container(
-            constraints: BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
-            padding: EdgeInsets.only(top: ConstantUtil.defaultPadTop),
+            constraints:
+                const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
+            padding: const EdgeInsets.only(top: ConstantUtil.defaultPadTop),
             child: TextField(
               controller: _controllerTxtInput,
               keyboardType: TextInputType.text,
-              decoration: InputDecoration(border: OutlineInputBorder()),
+              decoration: const InputDecoration(border: OutlineInputBorder()),
               textAlign: TextAlign.center,
               minLines: 8,
               maxLines: 16,
-              toolbarOptions:
-                  ToolbarOptions(copy: false, selectAll: false, paste: true),
+              toolbarOptions: const ToolbarOptions(
+                  copy: false, selectAll: false, paste: true),
             )));
 
     Row _rowTxtBtns = WdgUtil.buildRow(ButtonBar(
-        buttonPadding: EdgeInsets.all(16),
+        buttonPadding: const EdgeInsets.all(16),
         overflowButtonSpacing: 16,
         alignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -115,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     AppBar _buildAppBar = AppBar(
         backgroundColor: ConstantUtil.colorThemeApp,
-        title: Text(ConstantUtil.nmApplication),
+        title: const Text(ConstantUtil.nmApplication),
         actions: <Widget>[
           IconButton(
               icon: const Icon(Icons.settings),

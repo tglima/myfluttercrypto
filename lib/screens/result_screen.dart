@@ -7,12 +7,13 @@ import 'package:flutter/services.dart';
 class ResultScreen extends StatelessWidget {
   final String txtResult;
   final String txtTitle;
-  ResultScreen(this.txtTitle, this.txtResult);
+  const ResultScreen(this.txtTitle, this.txtResult, {Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Future<void> _copyToClipboard() async {
-      await Clipboard.setData(ClipboardData(text: this.txtResult));
+      await Clipboard.setData(ClipboardData(text: txtResult));
 
       WdgUtil.buildDialog(
           context, TypeDialog.success, ConstantUtil.txtCopiedSuccessfully);
@@ -20,17 +21,19 @@ class ResultScreen extends StatelessWidget {
 
     Flexible _flexResultInputTxt = Flexible(
         child: Container(
-            constraints: BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
-            padding: EdgeInsets.only(top: ConstantUtil.defaultPadTop),
+            constraints:
+                const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
+            padding: const EdgeInsets.only(top: ConstantUtil.defaultPadTop),
             child: TextField(
               readOnly: true,
-              controller: TextEditingController(text: this.txtResult),
+              controller: TextEditingController(text: txtResult),
               keyboardType: TextInputType.text,
-              decoration: InputDecoration(border: OutlineInputBorder()),
+              decoration: const InputDecoration(border: OutlineInputBorder()),
               textAlign: TextAlign.center,
               minLines: 8,
               maxLines: 16,
-              toolbarOptions: ToolbarOptions(copy: false, selectAll: false),
+              toolbarOptions:
+                  const ToolbarOptions(copy: false, selectAll: false),
             )));
 
     Row _rowTitle = WdgUtil.buildRow(Padding(
@@ -40,7 +43,7 @@ class ResultScreen extends StatelessWidget {
             textAlign: TextAlign.center,
             text: TextSpan(children: <TextSpan>[
               TextSpan(
-                  text: this.txtTitle,
+                  text: txtTitle,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
                       fontWeight: FontWeight.bold,
@@ -48,7 +51,7 @@ class ResultScreen extends StatelessWidget {
             ]))));
 
     Row _rowTxtBtnCopy = WdgUtil.buildRow(ButtonBar(
-        buttonPadding: EdgeInsets.all(16),
+        buttonPadding: const EdgeInsets.all(16),
         overflowButtonSpacing: 16,
         alignment: MainAxisAlignment.center,
         children: <Widget>[

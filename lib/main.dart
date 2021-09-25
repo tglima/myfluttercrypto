@@ -20,7 +20,7 @@ void main() async {
 
   await _initPackageInfo();
 
-  runApp(MaterialApp(
+  runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: HomeScreen(),
     title: ConstantUtil.nmApplication,

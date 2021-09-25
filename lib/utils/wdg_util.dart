@@ -6,7 +6,7 @@ class WdgUtil {
   static buildAppBar(BuildContext context, String title) {
     return AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_rounded),
+          icon: const Icon(Icons.arrow_back_rounded),
           onPressed: () => Navigator.pop(context),
         ),
         backgroundColor: ConstantUtil.colorThemeApp,
@@ -18,7 +18,7 @@ class WdgUtil {
     return Scaffold(
         appBar: appBar,
         body: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: listWdg)));
@@ -58,7 +58,7 @@ class WdgUtil {
       String txtButton = '',
       Color colorBkgTitle = Colors.transparent,
       bool showIcon = true}) {
-    txtButton = txtButton.length < 0 ? ConstantUtil.close : txtButton;
+    txtButton = txtButton.isEmpty ? ConstantUtil.close : txtButton;
     IconData iconDisplay = Icons.sentiment_satisfied_alt_outlined;
     Color iconColor = ConstantUtil.colorWhite;
     double iconSize = showIcon ? 90.0 : 0;
@@ -71,7 +71,7 @@ class WdgUtil {
     switch (typeDialog) {
       case TypeDialog.alert:
         {
-          txtTitle = txtTitle.length < 0 ? ConstantUtil.alert : txtTitle;
+          txtTitle = txtTitle.isEmpty ? ConstantUtil.alert : txtTitle;
           iconDisplay = Icons.error_rounded;
           iconColor = ConstantUtil.colorAlert;
         }
@@ -79,7 +79,7 @@ class WdgUtil {
 
       case TypeDialog.error:
         {
-          txtTitle = txtTitle.length < 0 ? ConstantUtil.error : txtTitle;
+          txtTitle = txtTitle.isEmpty ? ConstantUtil.error : txtTitle;
           iconDisplay = Icons.cancel_rounded;
           iconColor = ConstantUtil.colorRed;
         }
@@ -87,7 +87,7 @@ class WdgUtil {
 
       case TypeDialog.success:
         {
-          txtTitle = txtTitle.length < 0 ? ConstantUtil.success : txtTitle;
+          txtTitle = txtTitle.isEmpty ? ConstantUtil.success : txtTitle;
           iconDisplay = Icons.check_circle_outlined;
           iconColor = ConstantUtil.colorSuccess;
         }
@@ -95,7 +95,7 @@ class WdgUtil {
 
       case TypeDialog.exception:
         {
-          txtTitle = txtTitle.length < 0 ? ConstantUtil.error : txtTitle;
+          txtTitle = txtTitle.isEmpty ? ConstantUtil.error : txtTitle;
           iconDisplay = Icons.error_sharp;
           colorBkgTitle = ConstantUtil.colorRed;
           iconColor = ConstantUtil.colorRed;
@@ -110,7 +110,7 @@ class WdgUtil {
             backgroundColor: Colors.transparent,
             insetPadding: EdgeInsets.zero,
             child: Container(
-              constraints: BoxConstraints(
+              constraints: const BoxConstraints(
                   maxWidth: ConstantUtil.maxWidthBox,
                   maxHeight: ConstantUtil.maxHeightBox),
               child: Column(
@@ -120,11 +120,11 @@ class WdgUtil {
                     decoration: BoxDecoration(
                         color: colorBkgTitle,
                         shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(8),
                             topRight: Radius.circular(8))),
                     child: Padding(
-                      padding: EdgeInsets.all(8),
+                      padding: const EdgeInsets.all(8),
                       child: Text(txtTitle,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -136,7 +136,7 @@ class WdgUtil {
                     width: double.infinity,
                     color: ConstantUtil.colorWhite,
                     child: Padding(
-                        padding: EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
                         child: Column(children: <Widget>[
                           Icon(iconDisplay, color: iconColor, size: iconSize),
                           Text(txtContent, textAlign: TextAlign.center),
@@ -147,11 +147,11 @@ class WdgUtil {
                       decoration: BoxDecoration(
                           color: ConstantUtil.colorWhite,
                           shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.only(
+                          borderRadius: const BorderRadius.only(
                               bottomLeft: Radius.circular(8),
                               bottomRight: Radius.circular(8))),
                       child: Padding(
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           child: ButtonBar(
                               alignment: MainAxisAlignment.end,
                               children: <Widget>[
