@@ -11,7 +11,7 @@
 [![](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/pt-br/windows)
 
 [![](https://img.shields.io/badge/PRS-Welcome-239120?style=for-the-badge)](http://makeapullrequest.com)
-[![](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+[![](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](../../../LICENSE)
 
 Favorite ⭐ o repositório se você gostar do que vê 😉.
 
@@ -26,7 +26,7 @@ MyFlutterCrypto é um aplicativo multiplataforma que permite criptografar e desc
 
 ![](../../images/app_linux_desktop.png)
 
-Para fazer o download e obter maiores informações visite a  [Wiki](https://github.com/tglima/myfluttercrypto/wiki).
+Para fazer o download e obter maiores informações visite a [Wiki](https://github.com/tglima/myfluttercrypto/wiki/Início).
 
 ## Requisito para construir uma versão desktop
 * Um sistema operacional (ex. MacOS X, Linux, Windows)
