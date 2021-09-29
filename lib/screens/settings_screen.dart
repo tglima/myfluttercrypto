@@ -52,6 +52,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ])));
 
     Flexible _flexInputText = Flexible(
+        flex: 0,
+        fit: FlexFit.tight,
         child: Container(
             constraints:
                 const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),

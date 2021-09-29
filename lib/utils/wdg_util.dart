@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
@@ -15,6 +17,22 @@ class WdgUtil {
 
   static buildScaffold(
       BuildContext context, PreferredSizeWidget appBar, List<Widget> listWdg) {
+    if (Platform.isAndroid) {
+      return Scaffold(
+        appBar: appBar,
+        body: Container(
+          padding: const EdgeInsets.all(5),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                children: listWdg,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
         appBar: appBar,
         body: Container(

@@ -20,6 +20,8 @@ class ResultScreen extends StatelessWidget {
     }
 
     Flexible _flexResultInputTxt = Flexible(
+        flex: 0,
+        fit: FlexFit.tight,
         child: Container(
             constraints:
                 const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
