@@ -26,6 +26,8 @@ dependencies:
   url_launcher: ^6.0.11
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
 
 
 
