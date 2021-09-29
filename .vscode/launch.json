@@ -8,12 +8,6 @@
             "name": "myfluttercrypto",
             "request": "launch",
             "type": "dart"
-        },
-        {
-            "name": "myfluttercrypto (profile mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
         }
     ]
 }
