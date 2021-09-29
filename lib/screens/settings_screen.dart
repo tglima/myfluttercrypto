@@ -12,9 +12,10 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
+  final TextEditingController _controllerTxtInput = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController _controllerTxtInput = TextEditingController();
     setState(() {
       _controllerTxtInput.text = GlobalData.keyWord;
     });
@@ -34,30 +35,33 @@ class _SettingsScreenState extends State<SettingsScreen> {
       });
     }
 
-    Row _rowTxtInfo = WdgUtil.buildRow(RichText(
-        textAlign: TextAlign.justify,
-        textScaleFactor: 1.2,
-        text: TextSpan(children: <TextSpan>[
-          TextSpan(
-              text: ConstantUtil.txtInfoKeyWord + ConstantUtil.txtKeyWordReset,
-              style: TextStyle(
-                  height: ConstantUtil.lineHeightDefault,
-                  color: ConstantUtil.colorTxtDefault)),
-          TextSpan(
-              text: ConstantUtil.txtKeyWordWarning,
-              style: TextStyle(
-                  height: ConstantUtil.lineHeightDefault,
-                  fontWeight: FontWeight.bold,
-                  color: ConstantUtil.colorRed))
-        ])));
+    Row _rowTxtInfo = WdgUtil.buildRow(Container(
+        padding: ConstantUtil.edgeInsetsTopZero,
+        child: RichText(
+            textAlign: TextAlign.justify,
+            textScaleFactor: 1.2,
+            text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: ConstantUtil.txtInfoKeyWord +
+                      ConstantUtil.txtKeyWordReset,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      color: ConstantUtil.colorTxtDefault)),
+              TextSpan(
+                  text: ConstantUtil.txtKeyWordWarning,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      fontWeight: FontWeight.bold,
+                      color: ConstantUtil.colorRed))
+            ]))));
 
     Flexible _flexInputText = Flexible(
         flex: 0,
         fit: FlexFit.tight,
         child: Container(
             constraints:
-                const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
-            padding: const EdgeInsets.only(top: ConstantUtil.defaultPadTop),
+                BoxConstraints(maxWidth: ConstantUtil.maxWidthBox(context)),
+            padding: EdgeInsets.only(top: ConstantUtil.defaultPadTop()),
             child: TextField(
               controller: _controllerTxtInput,
               keyboardType: TextInputType.text,

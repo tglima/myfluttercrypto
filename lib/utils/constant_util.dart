@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfluttercrypto/data/global_data.dart';
 
 class ConstantUtil {
   //Texts
@@ -60,16 +61,32 @@ class ConstantUtil {
   static const EdgeInsetsGeometry edgeInsetsTopZero =
       EdgeInsets.fromLTRB(16, 0, 16, 8);
 
-  static const EdgeInsetsGeometry padTxtBtnDefault =
-      EdgeInsets.fromLTRB(40, 16, 40, 16);
+  static EdgeInsetsGeometry padTxtBtnDefault() {
+    return GlobalData.isMobileDevice
+        ? const EdgeInsets.fromLTRB(20, 16, 20, 16)
+        : const EdgeInsets.fromLTRB(40, 16, 40, 16);
+  }
 
   //Others
   static const double lineHeightDefault = 1.5;
   static final TextStyle textStyleDefault = TextStyle(
       height: ConstantUtil.lineHeightDefault,
       color: ConstantUtil.colorTxtDefault);
-  static const double defaultPadTop = 20;
-  static const double maxWidthBox = 475;
-  static const double maxHeightBox = 350;
+  static double defaultPadTop() {
+    return GlobalData.isMobileDevice ? 12 : 20;
+  }
+
+  static double maxWidthBox(context) {
+    return GlobalData.isMobileDevice
+        ? (MediaQuery.of(context).size.width - 56)
+        : 475;
+  }
+
+  static double maxHeightBox(context) {
+    return GlobalData.isMobileDevice
+        ? (MediaQuery.of(context).size.height * 0.25)
+        : 350;
+  }
+
   static const int lengthKeyWord = 20;
 }

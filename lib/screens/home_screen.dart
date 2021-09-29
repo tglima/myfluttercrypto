@@ -16,11 +16,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final TextEditingController _controllerTxtInput = TextEditingController();
+  final CryptoUtil _cryptoUtil = CryptoUtil();
+
   @override
   Widget build(BuildContext context) {
-    TextEditingController _controllerTxtInput = TextEditingController();
-    CryptoUtil _cryptoUtil = CryptoUtil();
-
     void _goToSettings() {
       WdgUtil.goToScreen(context: context, screen: const SettingsScreen());
     }
@@ -54,7 +54,8 @@ class _HomeScreenState extends State<HomeScreen> {
         return;
       }
 
-      ResultData resultData = _cryptoUtil.txtDecrypt(_controllerTxtInput.text);
+      ResultData resultData =
+          _cryptoUtil.txtDecrypt(_controllerTxtInput.text.trim());
       if (resultData.resultHasError()) {
         WdgUtil.buildDialog(
             context, TypeDialog.error, ConstantUtil.errDecryptTxt);
@@ -89,17 +90,16 @@ class _HomeScreenState extends State<HomeScreen> {
         fit: FlexFit.tight,
         child: Container(
             constraints:
-                const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
-            padding: const EdgeInsets.only(top: ConstantUtil.defaultPadTop),
+                BoxConstraints(maxWidth: ConstantUtil.maxWidthBox(context)),
+            padding: EdgeInsets.only(top: ConstantUtil.defaultPadTop()),
             child: TextField(
               controller: _controllerTxtInput,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.multiline,
               decoration: const InputDecoration(border: OutlineInputBorder()),
               textAlign: TextAlign.center,
               minLines: 8,
               maxLines: 16,
-              toolbarOptions: const ToolbarOptions(
-                  copy: false, selectAll: false, paste: true),
+              toolbarOptions: const ToolbarOptions(copy: false, paste: true),
             )));
 
     Row _rowTxtBtns = WdgUtil.buildRow(ButtonBar(

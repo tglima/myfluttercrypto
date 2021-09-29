@@ -24,8 +24,8 @@ class ResultScreen extends StatelessWidget {
         fit: FlexFit.tight,
         child: Container(
             constraints:
-                const BoxConstraints(maxWidth: ConstantUtil.maxWidthBox),
-            padding: const EdgeInsets.only(top: ConstantUtil.defaultPadTop),
+                BoxConstraints(maxWidth: ConstantUtil.maxWidthBox(context)),
+            padding: EdgeInsets.only(top: ConstantUtil.defaultPadTop()),
             child: TextField(
               readOnly: true,
               controller: TextEditingController(text: txtResult),
@@ -34,8 +34,7 @@ class ResultScreen extends StatelessWidget {
               textAlign: TextAlign.center,
               minLines: 8,
               maxLines: 16,
-              toolbarOptions:
-                  const ToolbarOptions(copy: false, selectAll: false),
+              toolbarOptions: const ToolbarOptions(copy: true, selectAll: true),
             )));
 
     Row _rowTitle = WdgUtil.buildRow(Padding(

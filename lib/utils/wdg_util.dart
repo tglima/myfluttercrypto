@@ -1,6 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:myfluttercrypto/data/global_data.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
 
@@ -22,11 +22,9 @@ class WdgUtil {
         appBar: appBar,
         body: Container(
           padding: const EdgeInsets.all(5),
-          child: Center(
-            child: SingleChildScrollView(
-              child: Column(
-                children: listWdg,
-              ),
+          child: SingleChildScrollView(
+            child: Column(
+              children: listWdg,
             ),
           ),
         ),
@@ -53,6 +51,21 @@ class WdgUtil {
       txtColorBtn = ConstantUtil.colorWhite;
     }
 
+    if (GlobalData.isMobileDevice) {
+      return TextButton(
+        onPressed: function,
+        child: Text(
+          nmIcon,
+          style: TextStyle(color: txtColorBtn),
+        ),
+        style: TextButton.styleFrom(
+            backgroundColor: bkgColorBtn,
+            padding: ConstantUtil.padTxtBtnDefault(),
+            minimumSize: const Size(140, 40),
+            maximumSize: const Size(200, 80)),
+      );
+    }
+
     return TextButton(
       onPressed: function,
       child: Text(
@@ -61,7 +74,7 @@ class WdgUtil {
       ),
       style: TextButton.styleFrom(
         backgroundColor: bkgColorBtn,
-        padding: ConstantUtil.padTxtBtnDefault,
+        padding: ConstantUtil.padTxtBtnDefault(),
       ),
     );
   }
@@ -80,7 +93,9 @@ class WdgUtil {
     IconData iconDisplay = Icons.sentiment_satisfied_alt_outlined;
     Color iconColor = ConstantUtil.colorWhite;
     double iconSize = showIcon ? 90.0 : 0;
-
+    double maxHeightDialog = GlobalData.isMobileDevice
+        ? (MediaQuery.of(context).size.height * 0.50)
+        : ConstantUtil.maxHeightBox(context);
     colorBkgTitle = colorBkgTitle == Colors.transparent
         ? ConstantUtil.colorThemeApp
         : colorBkgTitle;
@@ -128,9 +143,9 @@ class WdgUtil {
             backgroundColor: Colors.transparent,
             insetPadding: EdgeInsets.zero,
             child: Container(
-              constraints: const BoxConstraints(
-                  maxWidth: ConstantUtil.maxWidthBox,
-                  maxHeight: ConstantUtil.maxHeightBox),
+              constraints: BoxConstraints(
+                  maxWidth: ConstantUtil.maxWidthBox(context),
+                  maxHeight: maxHeightDialog),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -177,7 +192,8 @@ class WdgUtil {
                                     style: TextButton.styleFrom(
                                         backgroundColor:
                                             ConstantUtil.colorThemeApp,
-                                        padding: ConstantUtil.padTxtBtnDefault),
+                                        padding:
+                                            ConstantUtil.padTxtBtnDefault()),
                                     onPressed: () {
                                       Navigator.of(context).pop();
                                     },
