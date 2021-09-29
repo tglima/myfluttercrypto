@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:myfluttercrypto/screens/home_screen.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
@@ -16,6 +18,7 @@ void main() async {
     final info = await PackageInfo.fromPlatform();
     packageInfo = info;
     GlobalData.nuVersion = packageInfo.version;
+    GlobalData.isMobileDevice = Platform.isAndroid;
   }
 
   runApp(const MaterialApp(
