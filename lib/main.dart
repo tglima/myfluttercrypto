@@ -18,11 +18,11 @@ void main() async {
     GlobalData.nuVersion = packageInfo.version;
   }
 
-  await _initPackageInfo();
-
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
     home: HomeScreen(),
     title: ConstantUtil.nmApplication,
   ));
+
+  await _initPackageInfo();
 }
