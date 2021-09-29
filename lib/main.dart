@@ -7,6 +7,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'data/global_data.dart';
 
 void main() async {
+  GlobalData.isMobileDevice = Platform.isAndroid;
+
   Future<void> _initPackageInfo() async {
     PackageInfo packageInfo = PackageInfo(
       appName: '',
@@ -18,7 +20,6 @@ void main() async {
     final info = await PackageInfo.fromPlatform();
     packageInfo = info;
     GlobalData.nuVersion = packageInfo.version;
-    GlobalData.isMobileDevice = Platform.isAndroid;
   }
 
   runApp(const MaterialApp(
