@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.tglimatech.myfluttercrypto">
    <application
-        android:label="myfluttercrypto"
+        android:label="MyFlutterCrypto"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
