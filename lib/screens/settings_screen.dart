@@ -18,13 +18,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
   initState() {
     super.initState();
     setState(() {
-        _controllerTxtInput.text = GlobalData.keyWord;
-      });
+      _controllerTxtInput.text = GlobalData.keyWord;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-
     _saveSettings() {
       if (_controllerTxtInput.text.trim().length < ConstantUtil.lengthKeyWord) {
         WdgUtil.buildDialog(
