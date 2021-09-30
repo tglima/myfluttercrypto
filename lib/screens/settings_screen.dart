@@ -15,10 +15,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final TextEditingController _controllerTxtInput = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  initState() {
+    super.initState();
     setState(() {
-      _controllerTxtInput.text = GlobalData.keyWord;
-    });
+        _controllerTxtInput.text = GlobalData.keyWord;
+      });
+  }
+
+  @override
+  Widget build(BuildContext context) {
 
     _saveSettings() {
       if (_controllerTxtInput.text.trim().length < ConstantUtil.lengthKeyWord) {
