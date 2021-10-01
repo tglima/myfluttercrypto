@@ -27,7 +27,7 @@ void main() async {
       GlobalMaterialLocalizations.delegate,
       GlobalWidgetsLocalizations.delegate
     ],
-    supportedLocales: [Locale('pt', 'BR')],
+    supportedLocales: [Locale('pt', 'BR'), Locale('en', 'US')],
     debugShowCheckedModeBanner: false,
     home: HomeScreen(),
     title: ConstantUtil.nmApplication,
