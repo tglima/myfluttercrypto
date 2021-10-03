@@ -1,0 +1,42 @@
+{
+    "about"                         : "About",
+    "settings"                      : "Settings",
+    "errTxtIsEmpty"                 : "The text is empty!",
+    "titleEncrypt"                  : "Encrypted Text",
+    "titleDecrypt"                  : "Decrypted Text",
+    "inputYourText"                 : "Enter a text below and click the button corresponding to your choice",    
+    "errDecryptTxt"                 : "An error occurred and the text provided could not be decrypted!",
+    "errTxtInvalid"                 : "The text provided is invalid!",
+    "alert"                         : "Alert",
+    "error"                         : "Error",
+    "success"                       : "Success",
+    "close"                         : "Close",
+    "txtEncrypt"                    : "Encrypt",
+    "txtDecrypt"                    : "Decrypt",
+    "txtResult"                     : "Result",
+    "copyTxt"                       : "Copy Text",
+    "clearTxt"                      : "Clear Text",
+    "txtCopiedSuccessfully"         : "Text copied successfully!",
+    "copyright"                     : "Copyright",
+    "txtCopyright"                  : ": Copyright © 2021 Thiago Lima de Sousa.",
+    "visit"                         : "Visit",
+    "linkGitHub"                    : "https://github.com/tglima/myfluttercrypto",
+    "linkWiki"                      : "https://github.com/tglima/myfluttercrypto/wiki",
+    "version"                       : "Version",
+    "license"                       : "License",
+    "twoPoints"                     : ": ",
+    "txtLicense"                    : ": The source code of this application is under MIT License, everything else must be considered registered content of their respective owners and developers.",
+    "txtKeyWordReset"               : "Whenever the application is closed, the keyword goes back to its initial value. ",
+    "txtKeyWordWarning"             : "Without the exact keyword it is not possible to unscramble text that has been scrambled before!",
+    "save"                          : "Save",
+    "sucKeyWordSaved"               : "New keyword successfully saved!",
+    "errOpenSite"                   : "An error occurred and the site could not be opened: ",
+    "txtInfoKeyWord"                : "Below is the keyword used to encrypt and decrypt the texts, it must contain {value} characters. The more complex it is, the better it will be!",
+    "@txtInfoKeyWord"               : {         
+        "placeholders": {
+            "value" : {
+                "type": "int"
+            }
+        } 
+    }
+}

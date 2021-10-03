@@ -1,0 +1,42 @@
+{
+    "about"                         : "Sobre",
+    "settings"                      : "Configurações",
+    "errTxtIsEmpty"                 : "O texto informado está vazio!",
+    "titleEncrypt"                  : "Texto Criptografado",
+    "titleDecrypt"                  : "Texto Descriptografado",
+    "inputYourText"                 : "Informe um texto abaixo e clique no botão correspondente a sua escolha",
+    "errDecryptTxt"                 : "Ocorreu um erro e não foi possível descriptografar o texto informado!",
+    "errTxtInvalid"                 : "O texto informado é inválido!",
+    "alert"                         : "Alerta",
+    "error"                         : "Erro",
+    "success"                       : "Sucesso",
+    "close"                         : "Fechar",
+    "txtEncrypt"                    : "Criptografar",
+    "txtDecrypt"                    : "Descriptografar",
+    "txtResult"                     : "Resultado",
+    "copyTxt"                       : "Copiar Texto",
+    "clearTxt"                      : "Limpar Texto",
+    "txtCopiedSuccessfully"         : "Texto copiado com sucesso!",
+    "copyright"                     : "Copyright",
+    "txtCopyright"                  : ": Copyright © 2021 Thiago Lima de Sousa.",
+    "visit"                         : "Visite",
+    "linkGitHub"                    : "https://github.com/tglima/myfluttercrypto",
+    "linkWiki"                      : "https://github.com/tglima/myfluttercrypto/wiki/In%C3%ADcio",
+    "version"                       : "Versão",
+    "license"                       : "Licença",
+    "twoPoints"                     : ": ",
+    "txtLicense"                    : ": O código fonte desta aplicação está sob Licença MIT, todo o restante deve ser considerado conteúdo registrado dos seus respectivos proprietários e desenvolvedores.",
+    "txtKeyWordReset"               : "Sempre que o aplicativo é fechado a palavra chave retorna para o seu valor padrão. ",
+    "txtKeyWordWarning"             : "Sem a palavra chave correta não será possível descriptografar o texto!",
+    "save"                          : "Salvar",
+    "sucKeyWordSaved"               : "Nova palavra passe salva com sucesso!",
+    "errOpenSite"                   : "Ocorreu um erro e não foi possível abri o site: ",
+    "txtInfoKeyWord"                : "Abaixo está a palavra chave utilizada para criptografar e descriptografar os textos, ela deve conter {value} caracteres. Quanto mais complexa ela for, melhor será! ",
+    "@txtInfoKeyWord"               : {         
+        "placeholders": {
+            "value" : {
+                "type": "int"
+            }
+        } 
+    }
+}
