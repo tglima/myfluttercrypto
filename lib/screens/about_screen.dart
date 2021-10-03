@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myfluttercrypto/data/global_data.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
@@ -69,7 +68,7 @@ class AboutScreen extends StatelessWidget {
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
                   text: AppLocalizations.of(context)!.twoPoints +
-                      GlobalData.nuVersion,
+                      ConstantUtil.nuVersion,
                   style: ConstantUtil.textStyleDefault)
             ]))));
 
