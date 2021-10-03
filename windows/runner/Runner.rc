@@ -69,7 +69,7 @@ IDI_APP_ICON            ICON                    "resources\\myfluttercrypto.ico"
 #ifdef FLUTTER_BUILD_NAME
 #define VERSION_AS_STRING #FLUTTER_BUILD_NAME
 #else
-#define VERSION_AS_STRING "1.0.20210927"
+#define VERSION_AS_STRING "1.0.20211003"
 #endif
 
 VS_VERSION_INFO VERSIONINFO
@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "edu.tglimatech" "\0"
-            VALUE "FileDescription", "A new Flutter project." "\0"
+            VALUE "FileDescription", "Is a cross-platform application that allows you to encrypt and decrypt texts in a simple way." "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "myfluttercrypto" "\0"
+            VALUE "InternalName", "MyFlutterCrypto" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2021 edu.tglimatech. All rights reserved." "\0"
-            VALUE "OriginalFilename", "myfluttercrypto.exe" "\0"
-            VALUE "ProductName", "myfluttercrypto" "\0"
+            VALUE "OriginalFilename", "MyFlutterCrypto.exe" "\0"
+            VALUE "ProductName", "Myfluttercrypto" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
