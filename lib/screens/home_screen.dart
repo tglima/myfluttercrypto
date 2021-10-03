@@ -6,6 +6,7 @@ import 'package:myfluttercrypto/screens/settings_screen.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/crypto_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
 import 'about_screen.dart';
 
@@ -18,7 +19,6 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController _controllerTxtInput = TextEditingController();
   final CryptoUtil _cryptoUtil = CryptoUtil();
-
   @override
   Widget build(BuildContext context) {
     void _goToSettings() {
@@ -31,8 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
     bool _valTxtIsEmpty() {
       if (_controllerTxtInput.text.isEmpty) {
-        WdgUtil.buildDialog(
-            context, TypeDialog.error, ConstantUtil.errTxtIsEmpty);
+        WdgUtil.buildDialog(context, TypeDialog.error,
+            AppLocalizations.of(context)!.errTxtIsEmpty);
         return false;
       }
       return true;
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       WdgUtil.goToScreen(
           context: context,
-          screen: ResultScreen(ConstantUtil.titleEncrypt,
+          screen: ResultScreen(AppLocalizations.of(context)!.titleEncrypt,
               _cryptoUtil.txtEncrypt(_controllerTxtInput.text)));
     }
 
@@ -57,15 +57,15 @@ class _HomeScreenState extends State<HomeScreen> {
       ResultData resultData =
           _cryptoUtil.txtDecrypt(_controllerTxtInput.text.trim());
       if (resultData.resultHasError()) {
-        WdgUtil.buildDialog(
-            context, TypeDialog.error, ConstantUtil.errDecryptTxt);
+        WdgUtil.buildDialog(context, TypeDialog.error,
+            AppLocalizations.of(context)!.errDecryptTxt);
         return;
       }
 
       WdgUtil.goToScreen(
           context: context,
-          screen:
-              ResultScreen(ConstantUtil.titleDecrypt, resultData.resultTxt()));
+          screen: ResultScreen(AppLocalizations.of(context)!.titleDecrypt,
+              resultData.resultTxt()));
     }
 
     void _clearInputText() {
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
         textScaleFactor: 1.2,
         text: TextSpan(children: <TextSpan>[
           TextSpan(
-              text: ConstantUtil.inputYourText,
+              text: AppLocalizations.of(context)!.inputYourText,
               style: TextStyle(
                   height: ConstantUtil.lineHeightDefault,
                   color: ConstantUtil.colorTxtDefault))
@@ -108,11 +108,12 @@ class _HomeScreenState extends State<HomeScreen> {
         alignment: MainAxisAlignment.center,
         children: <Widget>[
           WdgUtil.buildTxtButton(
-              context, ConstantUtil.txtEncrypt, _encryptText),
+              context, AppLocalizations.of(context)!.txtEncrypt, _encryptText),
           WdgUtil.buildTxtButton(
-              context, ConstantUtil.clearTxt, _clearInputText,
+              context, AppLocalizations.of(context)!.clearTxt, _clearInputText,
               bkgColorBtn: ConstantUtil.colorSilver),
-          WdgUtil.buildTxtButton(context, ConstantUtil.txtDecrypt, _decryptText,
+          WdgUtil.buildTxtButton(
+              context, AppLocalizations.of(context)!.txtDecrypt, _decryptText,
               bkgColorBtn: ConstantUtil.colorAlert,
               txtColorBtn: ConstantUtil.colorTxtDefault)
         ]));
@@ -123,11 +124,11 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: <Widget>[
           IconButton(
               icon: const Icon(Icons.settings),
-              tooltip: ConstantUtil.settings,
+              tooltip: AppLocalizations.of(context)?.settings,
               onPressed: _goToSettings),
           IconButton(
               icon: const Icon(Icons.info),
-              tooltip: ConstantUtil.about,
+              tooltip: AppLocalizations.of(context)?.about,
               onPressed: _goToAbout)
         ]);
 

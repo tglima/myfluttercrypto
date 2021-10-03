@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:myfluttercrypto/data/global_data.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WdgUtil {
   static buildAppBar(BuildContext context, String title) {
@@ -89,7 +90,8 @@ class WdgUtil {
       String txtButton = '',
       Color colorBkgTitle = Colors.transparent,
       bool showIcon = true}) {
-    txtButton = txtButton.isEmpty ? ConstantUtil.close : txtButton;
+    txtButton =
+        txtButton.isEmpty ? AppLocalizations.of(context)!.close : txtButton;
     IconData iconDisplay = Icons.sentiment_satisfied_alt_outlined;
     Color iconColor = ConstantUtil.colorWhite;
     double iconSize = showIcon ? 90.0 : 0;
@@ -99,12 +101,14 @@ class WdgUtil {
     colorBkgTitle = colorBkgTitle == Colors.transparent
         ? ConstantUtil.colorThemeApp
         : colorBkgTitle;
-    txtButton = txtButton == '' ? ConstantUtil.close : txtButton;
+    txtButton =
+        txtButton == '' ? AppLocalizations.of(context)!.close : txtButton;
 
     switch (typeDialog) {
       case TypeDialog.alert:
         {
-          txtTitle = txtTitle.isEmpty ? ConstantUtil.alert : txtTitle;
+          txtTitle =
+              txtTitle.isEmpty ? AppLocalizations.of(context)!.alert : txtTitle;
           iconDisplay = Icons.error_rounded;
           iconColor = ConstantUtil.colorAlert;
         }
@@ -112,7 +116,8 @@ class WdgUtil {
 
       case TypeDialog.error:
         {
-          txtTitle = txtTitle.isEmpty ? ConstantUtil.error : txtTitle;
+          txtTitle =
+              txtTitle.isEmpty ? AppLocalizations.of(context)!.error : txtTitle;
           iconDisplay = Icons.cancel_rounded;
           iconColor = ConstantUtil.colorRed;
         }
@@ -120,7 +125,9 @@ class WdgUtil {
 
       case TypeDialog.success:
         {
-          txtTitle = txtTitle.isEmpty ? ConstantUtil.success : txtTitle;
+          txtTitle = txtTitle.isEmpty
+              ? AppLocalizations.of(context)!.success
+              : txtTitle;
           iconDisplay = Icons.check_circle_outlined;
           iconColor = ConstantUtil.colorSuccess;
         }
@@ -128,7 +135,8 @@ class WdgUtil {
 
       case TypeDialog.exception:
         {
-          txtTitle = txtTitle.isEmpty ? ConstantUtil.error : txtTitle;
+          txtTitle =
+              txtTitle.isEmpty ? AppLocalizations.of(context)!.error : txtTitle;
           iconDisplay = Icons.error_sharp;
           colorBkgTitle = ConstantUtil.colorRed;
           iconColor = ConstantUtil.colorRed;

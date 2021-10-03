@@ -3,6 +3,7 @@ import 'package:myfluttercrypto/data/global_data.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:myfluttercrypto/utils/enum_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({Key? key}) : super(key: key);
@@ -26,13 +27,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     _saveSettings() {
       if (_controllerTxtInput.text.trim().length < ConstantUtil.lengthKeyWord) {
-        WdgUtil.buildDialog(
-            context, TypeDialog.error, ConstantUtil.errTxtInvalid);
+        WdgUtil.buildDialog(context, TypeDialog.error,
+            AppLocalizations.of(context)!.errTxtInvalid);
         return;
       }
 
-      WdgUtil.buildDialog(
-          context, TypeDialog.success, ConstantUtil.sucKeyWordSaved);
+      WdgUtil.buildDialog(context, TypeDialog.success,
+          AppLocalizations.of(context)!.sucKeyWordSaved);
 
       setState(() {
         GlobalData.keyWord = _controllerTxtInput.text;
@@ -46,13 +47,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
             textScaleFactor: 1.2,
             text: TextSpan(children: <TextSpan>[
               TextSpan(
-                  text: ConstantUtil.txtInfoKeyWord +
-                      ConstantUtil.txtKeyWordReset,
+                  text: AppLocalizations.of(context)!
+                          .txtInfoKeyWord(ConstantUtil.lengthKeyWord) +
+                      AppLocalizations.of(context)!.txtKeyWordReset,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
-                  text: ConstantUtil.txtKeyWordWarning,
+                  text: AppLocalizations.of(context)!.txtKeyWordWarning,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
                       fontWeight: FontWeight.bold,
@@ -77,15 +79,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   const ToolbarOptions(copy: false, selectAll: false),
             )));
 
-    Row _rowTxtBtnSave = WdgUtil.buildRow(ButtonBar(
-        alignment: MainAxisAlignment.center,
-        children: <Widget>[
-          WdgUtil.buildTxtButton(context, ConstantUtil.save, _saveSettings)
-        ]));
+    Row _rowTxtBtnSave = WdgUtil.buildRow(
+        ButtonBar(alignment: MainAxisAlignment.center, children: <Widget>[
+      WdgUtil.buildTxtButton(
+          context, AppLocalizations.of(context)!.save, _saveSettings)
+    ]));
 
     return WdgUtil.buildScaffold(
         context,
-        WdgUtil.buildAppBar(context, ConstantUtil.settings),
+        WdgUtil.buildAppBar(context, AppLocalizations.of(context)!.settings),
         <Widget>[_rowTxtInfo, _flexInputText, _rowTxtBtnSave]);
   }
 }

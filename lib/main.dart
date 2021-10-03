@@ -5,6 +5,7 @@ import 'package:myfluttercrypto/screens/home_screen.dart';
 import 'package:myfluttercrypto/utils/constant_util.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'data/global_data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   GlobalData.isMobileDevice = Platform.isAndroid;
@@ -23,11 +24,16 @@ void main() async {
   }
 
   runApp(const MaterialApp(
-    localizationsDelegates: [
-      GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate
+    supportedLocales: [
+      ConstantUtil.americanEnglish,
+      ConstantUtil.brazilianPortuguese
     ],
-    supportedLocales: [Locale('pt', 'BR'), Locale('en', 'US')],
+    localizationsDelegates: [
+      AppLocalizations.delegate,
+      GlobalMaterialLocalizations.delegate,
+      GlobalCupertinoLocalizations.delegate,
+      GlobalWidgetsLocalizations.delegate,
+    ],
     debugShowCheckedModeBanner: false,
     home: HomeScreen(),
     title: ConstantUtil.nmApplication,

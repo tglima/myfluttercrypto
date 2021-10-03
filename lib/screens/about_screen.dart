@@ -5,6 +5,7 @@ import 'package:myfluttercrypto/utils/enum_util.dart';
 import 'package:myfluttercrypto/utils/wdg_util.dart';
 import 'package:flutter/gestures.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({Key? key}) : super(key: key);
@@ -12,13 +13,17 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     _openSite() async {
-      if (await canLaunch(ConstantUtil.linkGitHub)) {
-        await launch(ConstantUtil.linkGitHub);
+      String? linkWiki = AppLocalizations.of(context)?.linkWiki.toString();
+
+      linkWiki = linkWiki!.isEmpty ? ConstantUtil.linkGitHub : linkWiki;
+
+      if (await canLaunch(linkWiki)) {
+        await launch(linkWiki);
         return;
       }
 
       WdgUtil.buildDialog(context, TypeDialog.error,
-          ConstantUtil.errOpenSite + ConstantUtil.linkGitHub);
+          AppLocalizations.of(context)!.errOpenSite + linkWiki);
     }
 
     Row _rowNameApp = WdgUtil.buildRow(Padding(
@@ -41,13 +46,13 @@ class AboutScreen extends StatelessWidget {
             textAlign: TextAlign.left,
             text: TextSpan(children: <TextSpan>[
               TextSpan(
-                  text: ConstantUtil.license,
+                  text: AppLocalizations.of(context)!.license,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
                       fontWeight: FontWeight.bold,
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
-                  text: ConstantUtil.txtLicense,
+                  text: AppLocalizations.of(context)!.txtLicense,
                   style: ConstantUtil.textStyleDefault)
             ]))));
 
@@ -57,13 +62,14 @@ class AboutScreen extends StatelessWidget {
             textAlign: TextAlign.left,
             text: TextSpan(children: <TextSpan>[
               TextSpan(
-                  text: ConstantUtil.version,
+                  text: AppLocalizations.of(context)!.version,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
                       fontWeight: FontWeight.bold,
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
-                  text: ConstantUtil.twoPoints + GlobalData.nuVersion,
+                  text: AppLocalizations.of(context)!.twoPoints +
+                      GlobalData.nuVersion,
                   style: ConstantUtil.textStyleDefault)
             ]))));
 
@@ -73,13 +79,13 @@ class AboutScreen extends StatelessWidget {
             textAlign: TextAlign.left,
             text: TextSpan(children: <TextSpan>[
               TextSpan(
-                  text: ConstantUtil.copyright,
+                  text: AppLocalizations.of(context)!.copyright,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
                       fontWeight: FontWeight.bold,
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
-                  text: ConstantUtil.txtCopyright,
+                  text: AppLocalizations.of(context)!.txtCopyright,
                   style: ConstantUtil.textStyleDefault)
             ]))));
 
@@ -89,16 +95,16 @@ class AboutScreen extends StatelessWidget {
             textAlign: TextAlign.left,
             text: TextSpan(children: <TextSpan>[
               TextSpan(
-                  text: ConstantUtil.visit,
+                  text: AppLocalizations.of(context)!.visit,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
                       fontWeight: FontWeight.bold,
                       color: ConstantUtil.colorTxtDefault)),
               TextSpan(
-                  text: ConstantUtil.twoPoints,
+                  text: AppLocalizations.of(context)!.twoPoints,
                   style: ConstantUtil.textStyleDefault),
               TextSpan(
-                  text: ConstantUtil.linkGitHub,
+                  text: AppLocalizations.of(context)!.linkGitHub,
                   recognizer: TapGestureRecognizer()..onTap = _openSite,
                   style: TextStyle(
                       height: ConstantUtil.lineHeightDefault,
@@ -107,12 +113,14 @@ class AboutScreen extends StatelessWidget {
             ]))));
 
     return WdgUtil.buildScaffold(
-        context, WdgUtil.buildAppBar(context, ConstantUtil.about), <Widget>[
-      _rowNameApp,
-      _rowVersion,
-      _rowCopyright,
-      _rowLinkGitHub,
-      _rowLicense
-    ]);
+        context,
+        WdgUtil.buildAppBar(context, AppLocalizations.of(context)!.about),
+        <Widget>[
+          _rowNameApp,
+          _rowVersion,
+          _rowCopyright,
+          _rowLinkGitHub,
+          _rowLicense
+        ]);
   }
 }
