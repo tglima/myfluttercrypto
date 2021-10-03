@@ -3,9 +3,9 @@ import 'package:myfluttercrypto/data/global_data.dart';
 
 class ConstantUtil {
   //Texts
+  static const String nuVersion = '1.0.20211003';
   static const String nmApplication = "MyFlutterCrypto";
   static const String linkGitHub = 'https://github.com/tglima/myfluttercrypto';
-
   //Colors
   static final Color colorThemeApp = Colors.indigo.shade500;
   static final Color colorTxtUrl = Colors.indigo;
