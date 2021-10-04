@@ -51,7 +51,7 @@ class ConstantUtil {
   }
 
   static const int lengthKeyWord = 20;
-
+  static const Size minWindowSize = Size(720, 480);
   static const Locale brazilianPortuguese = Locale('pt', 'BR');
   static const Locale americanEnglish = Locale('en', 'US');
 }
