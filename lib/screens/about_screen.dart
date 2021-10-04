@@ -111,6 +111,22 @@ class AboutScreen extends StatelessWidget {
                       color: ConstantUtil.colorTxtUrl))
             ]))));
 
+    Row _rowTranslators = WdgUtil.buildRow(Padding(
+        padding: ConstantUtil.edgeInsetsDefault,
+        child: RichText(
+            textAlign: TextAlign.left,
+            text: TextSpan(children: <TextSpan>[
+              TextSpan(
+                  text: AppLocalizations.of(context)!.labelTranslators,
+                  style: TextStyle(
+                      height: ConstantUtil.lineHeightDefault,
+                      fontWeight: FontWeight.bold,
+                      color: ConstantUtil.colorTxtDefault)),
+              TextSpan(
+                  text: AppLocalizations.of(context)!.nameTranslators,
+                  style: ConstantUtil.textStyleDefault)
+            ]))));
+
     return WdgUtil.buildScaffold(
         context,
         WdgUtil.buildAppBar(context, AppLocalizations.of(context)!.about),
@@ -119,7 +135,8 @@ class AboutScreen extends StatelessWidget {
           _rowVersion,
           _rowCopyright,
           _rowLinkGitHub,
-          _rowLicense
+          _rowLicense,
+          _rowTranslators
         ]);
   }
 }
