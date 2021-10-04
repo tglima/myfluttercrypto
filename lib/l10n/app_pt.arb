@@ -30,6 +30,8 @@
     "txtKeyWordWarning"             : "Sem a palavra chave correta não será possível descriptografar o texto!",
     "save"                          : "Salvar",
     "sucKeyWordSaved"               : "Nova palavra passe salva com sucesso!",
+    "labelTranslators"              : "Tradutor(es) do Idioma: ",
+    "nameTranslators"               : "Thiago Lima de Sousa",
     "errOpenSite"                   : "Ocorreu um erro e não foi possível abri o site: ",
     "txtInfoKeyWord"                : "Abaixo está a palavra chave utilizada para criptografar e descriptografar os textos, ela deve conter {value} caracteres. Quanto mais complexa ela for, melhor será! ",
     "@txtInfoKeyWord"               : {         

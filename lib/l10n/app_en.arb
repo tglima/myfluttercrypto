@@ -30,6 +30,8 @@
     "txtKeyWordWarning"             : "Without the exact keyword it is not possible to unscramble text that has been scrambled before!",
     "save"                          : "Save",
     "sucKeyWordSaved"               : "New keyword successfully saved!",
+    "labelTranslators"              : "Language translator(s): ",
+    "nameTranslators"               : "Joel de Lima | Thiago Lima de Sousa",    
     "errOpenSite"                   : "An error occurred and the site could not be opened: ",
     "txtInfoKeyWord"                : "Below is the keyword used to encrypt and decrypt the texts, it must contain {value} characters. The more complex it is, the better it will be!",
     "@txtInfoKeyWord"               : {         
