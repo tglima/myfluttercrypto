@@ -19,7 +19,8 @@ void main() async {
   runApp(const MaterialApp(
     supportedLocales: [
       ConstantUtil.americanEnglish,
-      ConstantUtil.brazilianPortuguese
+      ConstantUtil.brazilianPortuguese,
+      ConstantUtil.spanishDefault
     ],
     localizationsDelegates: [
       AppLocalizations.delegate,

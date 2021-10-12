@@ -3,7 +3,7 @@ import 'package:myfluttercrypto/data/global_data.dart';
 
 class ConstantUtil {
   //Texts
-  static const String nuVersion = '1.0.20211004';
+  static const String nuVersion = '1.0.20211012';
   static const String nmApplication = "MyFlutterCrypto";
   static const String linkGitHub = 'https://github.com/tglima/myfluttercrypto';
   //Colors
@@ -54,4 +54,5 @@ class ConstantUtil {
   static const Size minWindowSize = Size(720, 480);
   static const Locale brazilianPortuguese = Locale('pt', 'BR');
   static const Locale americanEnglish = Locale('en', 'US');
+  static const Locale spanishDefault = Locale('es', '');
 }
