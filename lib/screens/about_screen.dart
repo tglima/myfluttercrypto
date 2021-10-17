@@ -16,13 +16,16 @@ class AboutScreen extends StatelessWidget {
 
       linkWiki = linkWiki!.isEmpty ? ConstantUtil.linkGitHub : linkWiki;
 
-      if (await canLaunch(linkWiki)) {
+      try {
         await launch(linkWiki);
-        return;
-      }
+      } catch (err) {
+        String? messageError =
+            AppLocalizations.of(context)!.errOpenSite + linkWiki;
 
-      WdgUtil.buildDialog(context, TypeDialog.error,
-          AppLocalizations.of(context)!.errOpenSite + linkWiki);
+        messageError += '\n \n Exception message: ${err.toString()}';
+
+        WdgUtil.buildDialog(context, TypeDialog.error, messageError);
+      }
     }
 
     Row _rowNameApp = WdgUtil.buildRow(Padding(
