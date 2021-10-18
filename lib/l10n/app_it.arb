@@ -1,0 +1,44 @@
+{
+    "about"                         : "Informazioni",
+    "settings"                      : "Impostazioni",
+    "errTxtIsEmpty"                 : "Il testo è vuoto!",
+    "titleEncrypt"                  : "Testo crittografato",
+    "titleDecrypt"                  : "Testo decrittografato",
+    "inputYourText"                 : "Inserisci un testo qui sotto e fai clic sul pulsante corrispondente alla tua scelta",    
+    "errDecryptTxt"                 : "Si è verificato un errore e non è stato possibile decifrare il testo fornito!",
+    "errTxtInvalid"                 : "Il testo fornito non è valido!",
+    "alert"                         : "Avviso",
+    "error"                         : "Errore",
+    "success"                       : "Riuscito",
+    "close"                         : "Chiudi",
+    "txtEncrypt"                    : "Crittografa",
+    "txtDecrypt"                    : "Decifra",
+    "txtResult"                     : "Risultato",
+    "copyTxt"                       : "Copia Testo",
+    "clearTxt"                      : "Pulisci Testo",
+    "txtCopiedSuccessfully"         : "Testo copiato con successo!",
+    "copyright"                     : "Copyright",
+    "txtCopyright"                  : ": Copyright © 2021 Thiago Lima de Sousa.",
+    "visit"                         : "Visita",
+    "linkGitHub"                    : "https://github.com/tglima/myfluttercrypto",
+    "linkWiki"                      : "https://github.com/tglima/myfluttercrypto/wiki",
+    "version"                       : "Versione",
+    "license"                       : "Licenza",
+    "twoPoints"                     : ": ",
+    "txtLicense"                    : ": Il codice sorgente di questa applicazione è sotto licenza MIT, tutto il resto è da considerarsi contenuto registrato dei rispettivi proprietari e sviluppatori.",
+    "txtKeyWordReset"               : "Ogni volta che l'applicazione viene chiusa, la parola chiave torna al suo valore iniziale. ",
+    "txtKeyWordWarning"             : "Senza la parola chiave esatta non è possibile decodificare il testo che è stato codificato in precedenza!",
+    "save"                          : "Salva",
+    "sucKeyWordSaved"               : "Nuova parola chiave salvata con successo!",
+    "labelTranslators"              : "Traduttore: ",
+    "nameTranslators"               : "Albano Battistella | albano_battistella@hotmail.com",    
+    "errOpenSite"                   : "Si è verificato un errore e non è stato possibile aprire il sito: ",
+    "txtInfoKeyWord"                : "Di seguito è riportata la parola chiave utilizzata per crittografare e decifrare i testi, deve contenere {value} caratteri. Più è complessa, meglio sarà!",
+    "@txtInfoKeyWord"               : {         
+        "placeholders": {
+            "value" : {
+                "type": "int"
+            }
+        } 
+    }
+}
