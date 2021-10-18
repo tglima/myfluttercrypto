@@ -20,7 +20,8 @@ void main() async {
     supportedLocales: [
       ConstantUtil.americanEnglish,
       ConstantUtil.brazilianPortuguese,
-      ConstantUtil.spanishDefault
+      ConstantUtil.spanishDefault,
+      ConstantUtil.italianDefault
     ],
     localizationsDelegates: [
       AppLocalizations.delegate,
